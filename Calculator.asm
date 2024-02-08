@@ -96,7 +96,7 @@ section .text
                 sub eax, '0'
                 movzx ebx, byte [num2]
                 sub  ebx, '0'
-                imul ebx
+                mul ebx
                 add eax, '0'
                 mov [num3], eax
 
@@ -130,7 +130,6 @@ section .text
 
                 jmp exit
             
-
 exit:
     mov eax, 1
     mov ebx, 0
