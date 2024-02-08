@@ -12,7 +12,7 @@ section .data
     Msg4Len: equ $-Msg4
 
     Msg5: db ".", 0xA
-    Msg5Len: equ 4-Msg5
+    Msg5Len: equ $-Msg5
 
 section .bss
     num1 rest 5
@@ -101,12 +101,14 @@ section .text
                 mov [num3], eax
 
             .impartire:
-                ;mov eax, 4
-                ;mov ebx, 1
-                ;mov ecx, op
-                ;mov edx, 5
-                ;int 0x80
-                ;jmp .resultat
+                movzx eax, byte [num1]
+                sub eax, '0'
+                movzx ebx, byte [num2]
+                sub ebx, '0'
+                div ebx 
+                add eax, '0'
+                mov [num3], eax
+
             .resultat:
                 mov eax, 4
                 mov ebx, 1
