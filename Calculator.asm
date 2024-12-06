@@ -73,13 +73,10 @@ section .text
             je .impartire
 
             .plus:
-                movzx eax, byte [num1]  
-                sub   eax, '0'         
-                movzx ebx, byte [num2] 
-                sub   ebx, '0'        
-                add   eax, ebx        
-                add   eax, '0'      
-                mov   [num3], eax       
+                mov eax,[num1]
+                sub eax,'0'
+                add eax,[num2]
+                mov [num3], eax
 
             .minus:
                 movzx eax, byte [num1]
